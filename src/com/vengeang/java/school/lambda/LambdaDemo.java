@@ -21,5 +21,6 @@ public class LambdaDemo {
 		 */
 		Info myInfo=()->System.out.println("Company Information");
 		myInfo.showInfo();
+		
 	}
 }
