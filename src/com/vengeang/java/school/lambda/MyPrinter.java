@@ -7,4 +7,8 @@ public interface MyPrinter {
 	default void display(String t) {
 		System.out.println("default hello ,"+t);
 	}
+	default void show() {
+		System.out.println("hoello");
+		System.out.println("Hi");
+	}
 }
