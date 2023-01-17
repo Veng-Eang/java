@@ -11,4 +11,5 @@ public interface MyPrinter {
 		System.out.println("hoello");
 		System.out.println("Hi");
 	}
+	
 }

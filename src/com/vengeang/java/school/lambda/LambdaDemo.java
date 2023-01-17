@@ -1,8 +1,22 @@
 package com.vengeang.java.school.lambda;
 
+import java.util.Comparator;
+import java.util.HashMap;
+//import java.util.List;
+//import java.util.Map;
+
 public class LambdaDemo {
 
 	public static void main(String[] args) {
+		MyPrinter myPrinter =System.out::println;
+		
+		myPrinter.print("Hello Java ");
+		
+		Caculator  myCaculator = new MyCaculator();
+		Caculator myCaculator2=(a,b)->(a+b)*2;
+		myCaculator.sum(10, 20);
+		myCaculator2.sum(10, 20);
+		
 		MyPrinter printer=(text)->System.out.println("Hello, "+text);
 		printer.print("venng");
 		MyPrinter printerInnerClass=new MyPrinter() {
@@ -13,6 +27,8 @@ public class LambdaDemo {
 				System.out.println("Inner class hello ,"+ t);
 			}
 		};
+		
+		
 		printerInnerClass.display("eang");
 		/*
 		 * 1. Functional Interface
@@ -21,6 +37,37 @@ public class LambdaDemo {
 		 */
 		Info myInfo=()->System.out.println("Company Information");
 		myInfo.showInfo();
+		myInfo.show("vengeang");
+		myInfo.show("eang");
+		MyPrinter print=(s)->System.out.println("wellcome "+s);
+		print.display("eang");
+		print.print("Eang");
+		//List<Integer> listNumber =List.of(23,43,5,6,77,8) ;
+		
+		Comparator<Integer> compareByNumber =(var p1,var p2)->p1-p2;
+		compareByNumber.compare(10, 0);
+//		Map<String, Long> priceMap=new HashMap<>();
+		var priceMap=new HashMap<>();
+		
+		priceMap.put("apple", 30L);
+		
+		Caculator caculate=(a, b) -> {
+			a=a*2;
+			b=b*2;
+			return a+b;
+		};
+		System.out.println(caculate.sum(20, 30));
+		
+	} 
+	static class MyCaculator implements Caculator{
+
+		@Override
+		public int sum(int a, int b) {
+			// TODO Auto-generated method stub
+			return (a+b)*2;
+		}
 		
 	}
+	
+	
 }
