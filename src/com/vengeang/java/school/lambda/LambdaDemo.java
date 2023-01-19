@@ -2,14 +2,23 @@ package com.vengeang.java.school.lambda;
 
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.function.Consumer;
+//import java.util.function.Function;
+//import java.util.function.Predicate;
+import java.util.function.Supplier;
 //import java.util.List;
 //import java.util.Map;
 
 public class LambdaDemo {
-
+	static String nameMethod() {
+		return "Vengeang";
+	}
 	public static void main(String[] args) {
 		MyPrinter myPrinter =System.out::println;
-		
+		Supplier<String> name1=LambdaDemo::nameMethod;
+		System.out.println(name1.get());
+		Consumer<String> name=System.out::println;
+		name.accept("Hello ,Vengeang");
 		myPrinter.print("Hello Java ");
 		
 		Caculator  myCaculator = new MyCaculator();
