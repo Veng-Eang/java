@@ -39,9 +39,7 @@ public class FunctionalInterfacesUsageDemo2 {
 //			.collect(Collectors.toList());
 //		System.out.println(femaleStudents);
 		students.stream()
-			.filter(n->n.getGender()=="F")
-			.sorted((st1,st2)->st2.getId()-st1.getId())
-			.limit(3)
+			.filter(n->n.getId()==1)
 			.forEach(student->System.out.println(student.getName()+" , "+student.getGender()));
 //		System.out.println(studentByAge);
 		
