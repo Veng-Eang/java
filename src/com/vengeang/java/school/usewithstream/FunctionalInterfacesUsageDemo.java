@@ -1,6 +1,7 @@
 package com.vengeang.java.school.usewithstream;
 
 import java.util.List;
+import java.util.function.Function;
 
 public class FunctionalInterfacesUsageDemo {
 
@@ -22,8 +23,9 @@ public class FunctionalInterfacesUsageDemo {
 //			.map(name->name.toUpperCase())
 //			.filter(name->name.length()>4)
 //			.forEach(System.out::println);
-		
-		
+		Function<String, Integer> len=n->n.length();
+		Integer lengthName = len.apply("vengeang");
+		System.out.println(lengthName);
 
 	}
 
