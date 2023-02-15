@@ -1,4 +1,4 @@
-package com.vengeang.java.school;
+package com.vengeang.java.school.testforton;
 	import java.text.DecimalFormat;
 	import java.util.Scanner;
 	
